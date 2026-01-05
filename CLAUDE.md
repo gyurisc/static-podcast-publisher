@@ -6,23 +6,42 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Local-first toolset for publishing private podcasts using static RSS feeds and object storage (e.g., Cloudflare R2). Privacy is achieved via unguessable URLs, not authentication.
 
+## Requirements
+
+- Python 3.10+
+- S3-compatible object storage (Cloudflare R2 recommended)
+
 ## Architecture
 
 ```
-Local machine (authoring + publishing)
-  ├── episodes (mp3)
-  ├── metadata.yaml
-  └── RSS generator
-          │
-          ▼
-Object storage (delivery)
-  ├── feed.xml
-  └── audio/*.mp3
+Local machine
+├── input/
+│   └── metadata.yaml
+├── generate_feed.py
+└── output/
+    ├── feed.xml
+    └── audio/
 ```
 
-GitHub stores tooling only. No audio files, real metadata, generated feeds, or credentials in this repo.
+The `input/` and `output/` directories are local-only (gitignored). GitHub stores tooling only—no audio files, real metadata, generated feeds, or credentials.
 
-## Planned Components
+## Commands
+
+```bash
+# Setup local directories
+mkdir -p input output/audio
+
+# Copy sample metadata
+cp examples/metadata.sample.yaml input/metadata.yaml
+
+# Generate RSS feed
+python generate_feed.py
+
+# Upload to storage (after manual verification of output/feed.xml)
+./publish.sh
+```
+
+## Components
 
 - `generate_feed.py` - RSS 2.0 feed generator from YAML metadata
 - `publish.sh` - Upload script for S3-compatible storage
