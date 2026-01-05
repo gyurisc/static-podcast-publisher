@@ -1,0 +1,22 @@
+podcast:
+  title: "Static Podcast Publisher – Sample Feed"
+  description: "Sample podcast feed used to demonstrate static RSS generation."
+  language: "en-us"
+  author: "Your Name"
+  base_url: "https://example.com/private-feed"
+  image: "https://example.com/cover.jpg"
+
+episodes:
+  - id: "ep001"
+    title: "Episode 1 – Hello World"
+    description: "This is a sample episode used for testing RSS generation."
+    file: "ep001.mp3"
+    pub_date: "2026-01-10T09:00:00Z"
+    duration: "10:42"
+
+  - id: "ep002"
+    title: "Episode 2 – Second Test"
+    description: "Another sample episode entry."
+    file: "ep002.mp3"
+    pub_date: "2026-01-17T09:00:00Z"
+    duration: "12:15"

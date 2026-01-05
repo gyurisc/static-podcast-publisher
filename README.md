@@ -36,5 +36,15 @@ Privacy is achieved via **unguessable URLs**, not authentication.
 
 ---
 
-## Architecture (high level)
+## Local directories
 
+This project expects the following local directories, which are intentionally
+excluded from version control:
+
+- `input/`  
+  Contains podcast metadata and local episode references.
+
+- `output/`  
+  Generated RSS feed and publish-ready audio structure.
+
+Both directories are created and managed locally.
