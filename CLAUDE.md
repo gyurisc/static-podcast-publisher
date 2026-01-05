@@ -55,3 +55,8 @@ python generate_feed.py
 - **Local-first**: All authoring and publishing from author's machine
 - **No secrets in repo**: Storage credentials never committed
 - **Deterministic feeds**: Same metadata produces same RSS output
+
+  ## Workflow
+
+  - Commit directly to main branch
+  - No PRs required for this project
